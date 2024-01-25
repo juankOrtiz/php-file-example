@@ -8,19 +8,17 @@ require_once __DIR__ . '/inc/flash.php';
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PHP upload multiple files</title>
     <link rel="stylesheet" href="https://www.phptutorial.net/app/css/style.css" />
-    <title>PHP File Upload</title>
 </head>
 
 <body>
-
     <?php flash('upload') ?>
-
     <main>
-        <form enctype="multipart/form-data" action="upload.php" method="post">
+        <form action="upload.php" method="post" enctype="multipart/form-data">
             <div>
-                <label for="file">Select a file:</label>
-                <input type="file" id="file" name="file" />
+                <label for="files">Select files to upload:</label>
+                <input type="file" name="files[]" id="files" multiple required />
             </div>
             <div>
                 <button type="submit">Upload</button>
